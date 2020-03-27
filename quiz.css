@@ -24,17 +24,18 @@ position: relative;
    text-align: center;
 }
 button{
-    border-radius:  5px;
-    padding: 20px;
+    border-radius:  100px;
+    padding: 22px 100px;
     background-color:orange;
     margin: 0;
     border: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
     font-weight: bold;
-    font-size: large;
+    font-size: 20px;
 }
 button:hover{
-    padding: 22px;
-    color: white;
-    background-color: orange;
+    font-size: 24px;
+    background-color: rgb(250, 102, 4);
+   
+    
 }

@@ -1,0 +1,9 @@
+.row{
+    background-color: palegreen;
+    margin-bottom: 20px;
+    padding: 30px 30px 50px 30px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+body{
+    background-color: rgb(213, 213, 213);
+}
