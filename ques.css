@@ -1,9 +1,40 @@
 .row{
-    background-color: palegreen;
+    background-color: white;
     margin-bottom: 20px;
     padding: 30px 30px 50px 30px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, .5);
+    min-height: 100px;
 }
-body{
-    background-color: rgb(213, 213, 213);
+.back{
+    background-color:rgb(67, 0, 148);
+}
+.quizhead{
+    text-align: center;
+    box-shadow: none;
+    margin-bottom: 40px;
+
+}
+h1{
+    color: rgb(67, 0, 148);
+    font-size: 60px;
+}
+
+.container{
+    background-color: white;
+    padding: 3px;
+}
+.sub {
+    background-color: white;
+    color:rgb(67, 0, 148);
+    display: block;
+    float:right;
+    margin-top: 10px;
+    margin-bottom: -10px;
+   
+}
+.sub:hover{
+    background-color: rgb(67, 0, 148);
+    color:white;
+
+    
 }
