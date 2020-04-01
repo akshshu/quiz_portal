@@ -23,7 +23,7 @@ var tag = "<div class=\"col-md-12\"><h3>";
 var opt_tag = '<input type="radio" name=';
 var y = document.getElementById("main");
 var i, j;
-var count = 0;
+var count = 0, no_of_attempt = 0;
 var row_h = y.innerHTML;
 for (i = 0; i < 10; i++) {
     row_h += "<div class=\"row\"></div>";
@@ -33,7 +33,6 @@ var x = document.getElementsByClassName("row");
 function sc(val) {
     var s = "";
     var l = "\""
-    var j;
     for (j = 0; j < 4; j++) {
         s += opt_tag + '"question' + i + '" value="' + option[val][j] + '"><label>' + option[val][j] + '</label></br>';
     }
@@ -41,7 +40,7 @@ function sc(val) {
 }
 for (i = 0; i < x.length; i++) {
     if (i == x.length - 1) {
-        x[i].innerHTML = tag + que[i] + "</h3>" + sc(i) + '<div class="btn" id="button">Submit</div>';
+        x[i].innerHTML = tag + que[i] + "</h3>" + sc(i) + '<button type="button" id="button" class="btn btn-primary">Submit</button>';
 
     }
     else {
@@ -53,11 +52,35 @@ for (i = 0; i < x.length; i++) {
 document.getElementById('button').addEventListener('click', evaluate);
 function evaluate() {
     for (i = 0; i < x.length; i++) {
-        user_opt = (document.querySelector('input[name=question' + i + ']:checked') || {});
-        if (user_opt.value == ans[i]) {
-            count += 1;
+        user_opt = (document.querySelector('input[name=question' + i + ']:checked'));
+        if (user_opt) {
+            no_of_attempt += 1;
         }
     }
-    console.log(count);
-    alert(count + " correct");
+    if (no_of_attempt == x.length) {
+        for (i = 0; i < x.length; i++) {
+            user_opt = (document.querySelector('input[name=question' + i + ']:checked'));
+            if (user_opt.value == ans[i]) {
+                count += 1;
+                user_opt.nextElementSibling.style.color = "green";
+            }
+            else {
+                user_opt.nextElementSibling.style.color = "red";
+            }
+        }
+        var para = document.createElement("h4");
+        para.innerHTML = count + " out of " + x.length + " are correct";
+        document.getElementById("main").appendChild(para);
+        var scrollingElement = (document.scrollingElement || document.body);
+        scrollingElement.scrollTop = scrollingElement.scrollHeight;
+        count = 0;
+        no_of_attempt = 0;
+
+    }
+    else {
+        no_of_attempt = 0;
+        alert("please attempt all que");
+    }
+
+
 }

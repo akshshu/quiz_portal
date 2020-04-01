@@ -23,18 +23,7 @@ h1{
     background-color: white;
     padding: 3px;
 }
-.sub {
-    background-color: white;
-    color:rgb(67, 0, 148);
-    display: block;
-    float:right;
-    margin-top: 10px;
-    margin-bottom: -10px;
-   
-}
-.sub:hover{
-    background-color: rgb(67, 0, 148);
-    color:white;
 
-    
+.btn{
+    float:right;
 }
